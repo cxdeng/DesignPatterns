@@ -103,3 +103,87 @@ The above figure shows that the Demo class defines three methods:
 * **method() :** The modifier is public, there are no parameters, and there is no return value.
 * **method1() :** The modifier is private, there are no parameters, and the return value type is String.
 * **method2() :** The modifier is protected, it receives two parameters, the first parameter type is int, the second parameter type is String, and the return value type is int.
+
+
+
+### 2.3.2 The representation between classes
+
+#### 2.3.2.1 Relevance Relationships
+
+An association relationship is a reference relationship between objects, used to represent the connection between one class of objects and another class of objects, such as teacher and student, master and apprentice, husband and wife, and so on. Association relation is the most commonly used relation between classes, which is divided into general association relation, aggregation relation and composition relation. Let's start with general associations.
+
+Correlation can also be divided into unidirectional correlation, bidirectional correlation and self-correlation.
+
+1. One-way Association
+
+   ![](./img/customer_address.png)
+
+   In UML class diagrams, one-way associations are represented by a solid line with an arrow. The figure above shows that each Customer has an Address, which is achieved by having the Customer class hold a member variable class of type address.
+
+2. Two-way Association
+
+   ![](./img/customer_product.png)
+
+   From the figure above, it is easy to see that the so-called two-way association is that each side holds a member variable of the other's type.
+
+   In UML class diagrams, bidirectional associations are represented by a straight line without an arrow. In the figure above, a List<Product> is maintained in the Customer class, indicating that a customer can purchase multiple items; Maintaining a member variable of type Customer in the Product class indicates which customer purchased the product.
+
+   
+
+3. Self-Association
+
+   ![](./img/node.png)
+
+   Self-association is represented in a UML class diagram by a line with an arrow pointing to itself. The above figure means that the Node class contains member variables of type Node, that is, "contains itself".
+
+   
+
+#### 2.3.2.2 Aggregation Relationships
+
+Aggregation is a type of association, representing a strong association, and signifies the relationship between a whole and its parts.
+
+Aggregation is implemented through member objects, where the member object is a part of the whole object, but the member object can exist independently of the whole object. For instance, the relationship between a school and its teachers: a school comprises teachers, but if the school were to shut down, the teachers would still exist.
+
+In UML class diagrams, the aggregation relationship is represented by a solid line with an open diamond, with the diamond pointing towards the whole. The diagram below illustrates the relationship between a university and its teachers:
+
+![](./img/University_Teacher.png)
+
+
+
+#### 2.3.2.3 Composition Relationships
+
+Composition represents the relationship of a whole to its parts, but it is a stronger form of aggregation.
+
+In a composition relationship, the whole object controls the lifecycle of its parts. If the whole object ceases to exist, the part objects will also not exist; they cannot exist independently of the whole. For example, the relationship between a head and a mouth: without the head, the mouth also ceases to exist.
+
+In UML class diagrams, the composition relationship is represented by a solid line with a filled diamond, with the diamond pointing towards the whole. The diagram below illustrates the relationship between a head and its mouth: 
+
+![](./img/Head_Mouth.png)
+
+
+
+#### 2.3.2.4 Dependency Relationships
+
+Dependency is a type of usage relationship and represents the weakest coupling between objects, being a temporary association. In code, a method of one class accesses certain methods in another class (the dependent class) through local variables, method parameters, or calls to static methods to fulfill some responsibilities.
+
+In UML class diagrams, the dependency relationship is represented by a dashed line with an arrow, where the arrow points from the using class to the dependent class. The diagram below illustrates the relationship between a driver and a car, with the driver driving the car:
+
+![](./img/Driver_Car.png)
+
+#### 2.3.2.5 Inheritance Relationships
+
+Inheritance is the type of relationship with the highest degree of coupling between objects, representing the general-to-specific relationship. It denotes the relationship between a parent class and its child class and is a form of inheritance.
+
+In UML class diagrams, the generalization relationship is represented by a solid line with an open triangle arrow, where the arrow points from the child class to the parent class. In code implementation, the object-oriented inheritance mechanism is used to realize the generalization relationship. For instance, both the Student class and the Teacher class are subclasses of the Person class, as illustrated in the following diagram: 
+
+![](./img/Inheritance Relationship.png)
+
+
+
+#### 2.3.2.6 Implements Relationships
+
+The realization relationship exists between an interface and its implementing classes. In this relationship, the class implements the interface, and the operations within the class implement all abstract operations declared in the interface.
+
+In UML class diagrams, the realization relationship is represented by a dashed line with an open triangle arrow, where the arrow points from the implementing class to the interface. For example, both the Car and the Boat realize the 'Transportation Tool' interface, as depicted in the following diagram:
+
+![](./img/Implements_relationships.png)
